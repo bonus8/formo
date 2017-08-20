@@ -13,11 +13,19 @@ export default class LoginForm extends Component {
           <Text h1>Login</Text>
         </View>
         <View style={{paddingVertical: 30}}>
-          <Field component={TextInput} name="email" placeholder="iloverego@afusion.com" label="Email" validate={validator.required} />
-          <Field component={TextInput} name="password" placeholder="at least 6 words" label="Password" validate={validator.required} secureTextEntry />
-        </View>
-        <View>
-          <Button raised icon={{name: 'send'}} backgroundColor="#FFC107" title='Login' onPress={this.props.onSubmit} disabled={this.props.invalid} />
+          {
+            this.props.main.user.isLogin
+            ?
+            <Button raised icon={{name: 'send'}} backgroundColor="#4CAF50" title='SignOut' onPress={this.props.onSignOut} />
+            :
+            <View>
+              <Field component={TextInput} name="email" placeholder="iloverego@afusion.com" label="Email" validate={validator.required} />
+              <Field component={TextInput} name="password" placeholder="at least 6 words" label="Password" validate={validator.required} secureTextEntry />
+              <View style={{paddingTop: 30}}>
+                <Button raised icon={{name: 'send'}} backgroundColor="#FFC107" title='Login' onPress={this.props.onSubmit} disabled={this.props.invalid} />
+              </View>
+            </View>
+          }
         </View>
       </View>
     )

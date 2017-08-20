@@ -16,12 +16,16 @@
     "react-redux": "^5.0.6",
     "react-router-native": "^4.1.1",
     "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
     "redux-form": "^7.0.3",
     "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "babel-jest": "20.0.3",
     "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-react-native": "2.1.0",
     "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.12"

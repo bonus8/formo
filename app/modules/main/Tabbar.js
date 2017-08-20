@@ -13,11 +13,14 @@ export default class Tabbar extends Component {
           <Ionicon name="ios-search" size={30} />
         </Link>
         <Link style={styles.navItem} to="/login" underlayColor="#f0f4f7">
-          <SimpleLineIcons name="user" size={25} />
+          <SimpleLineIcons name="login" size={25} />
         </Link>
-        <Link style={styles.navItem} to="/register" underlayColor="#f0f4f7">
-          <SimpleLineIcons name="user" size={25} />
-        </Link>
+        {
+          !this.props.isLogin &&
+          <Link style={styles.navItem} to="/register" underlayColor="#f0f4f7">
+            <SimpleLineIcons name="user" size={25} />
+          </Link>
+        }
       </View>
     )
   }

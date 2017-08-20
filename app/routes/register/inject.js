@@ -1,7 +1,7 @@
 import React, { PureComponent as Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
-import { registerUser } from 'modules/api';
+import { createUser } from 'modules/api';
 
 
 export default OriginalComponent => {
@@ -12,7 +12,7 @@ export default OriginalComponent => {
     }
 
     handleSubmit = value => {
-      registerUser(value).then(res => {
+      createUser(value).then(res => {
         console.warn(res);
         this.setState({
           isSucceeded: true
