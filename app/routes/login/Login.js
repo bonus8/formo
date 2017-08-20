@@ -1,18 +1,28 @@
 import React, { PureComponent as Component } from 'react';
 import { View, Text } from 'react-native';
+import { LoginForm } from 'modules/loginForm';
+import inject from './inject';
 
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
   }
 
   render() {
+    if(this.props.isSucceeded) {
+      return (
+        <View>
+          <Text>Welcome!!</Text>
+        </View>
+      )
+    }
     return (
       <View>
-        <Text>Login Form will be here</Text>
+        <LoginForm {...this.props} />
       </View>
     )
   }
 }
+
+export default inject(Login);
