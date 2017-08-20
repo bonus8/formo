@@ -1,13 +1,6 @@
-import firebase from 'firebase';
-import { FIREBASE_BASEURL } from 'config';
+import { auth, database } from 'utils/firebase';
 
-
-firebase.initializeApp({
-  databaseURL: FIREBASE_BASEURL
-});
-
-const database = firebase.database();
 
 export const registerUser = formData => {
-  return database.ref('users').push(formData);
+  return auth.createUserWithEmailAndPassword(formData.email, formData.password);
 }

@@ -19,6 +19,7 @@ export default class TextInput extends Component {
           onBlur={input.onBlur}
           onFocus={input.onFocus}
           value={input.value}
+          autoCapitalize="none"
           {...rest} />
       </View>
     )
